@@ -1,0 +1,23 @@
+name: GitHub Actions with Bazel
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Testing installing software in runners."
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: |
+          bazel version
+      - run: |
+          sudo apt-get update && \
+          sudo apt-get -y install g++ unzip zip curl && \
+          sudo apt-get -y install openjdk-8-jdk \
+          sudo apt-get -y install openjdk-11-jdk \
+          curl -L https://github.com/bazelbuild/bazel/releases/download/4.0.0/bazel-4.0.0-linux-arm64 --output bazel_installer \
+          chmod a+x bazel
+      - run: |
+          ./bazel version

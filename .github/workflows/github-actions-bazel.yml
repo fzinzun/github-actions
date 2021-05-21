@@ -18,4 +18,4 @@ jobs:
       - run: |
           curl -L https://github.com/bazelbuild/bazel/releases/download/4.0.0/bazel-4.0.0-linux-x86_64 --output bazel && \
           chmod a+x bazel && \
-          ./bazel version
+          ./bazel build //src/golang/... 

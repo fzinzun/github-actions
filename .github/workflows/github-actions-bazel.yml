@@ -16,6 +16,6 @@ jobs:
           sudo apt-get update && \
           sudo apt-get -y install g++ unzip zip curl openjdk-8-jdk openjdk-11-jdk
       - run: |
-          curl -L https://github.com/bazelbuild/bazel/releases/download/4.0.0/bazel-4.0.0-linux-arm64 --output bazel && \
+          curl -L https://github.com/bazelbuild/bazel/releases/download/4.0.0/bazel-4.0.0-linux-x86_64 --output bazel && \
           chmod a+x bazel && \
           ./bazel version
